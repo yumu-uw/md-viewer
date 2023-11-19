@@ -11,5 +11,3 @@ xattr -rc [アプリのパス]
 
 ## Author
 yumu-uw
-
-## Licence
