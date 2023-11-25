@@ -33,8 +33,12 @@ case $RELEASE_TYPE in
             NEXT_VERSION="${ARR[0]}.${ARR[1]}.${N}";;
 esac
 
+codesign --force --deep-verify --verbose --sign yumu-uw-app build/bin/md-viewer-arm64.app/
 zip -r build/bin/md-viewer_${NEXT_VERSION}_darwin_arm64.zip  build/bin/md-viewer-arm64.app
+
+codesign --force --deep-verify --verbose --sign yumu-uw-app build/bin/md-viewer-amd64.app/
 zip -r build/bin/md-viewer_${NEXT_VERSION}_darwin_amd64.zip  build/bin/md-viewer-amd64.app
+
 zip -r build/bin/md-viewer_${NEXT_VERSION}_windows_amd64.zip build/bin/md-viewer-amd64.exe
 
 echo $NEXT_VERSION > version.txt
